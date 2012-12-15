@@ -2,12 +2,15 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tours }
-    end
+    @tours =  if params[:category_id]
+                Category.find(params[:category_id]).tours
+              else
+                Tour.all
+              end
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @tours}
+      end
   end
 
   # GET /tours/1

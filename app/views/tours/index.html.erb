@@ -1,5 +1,14 @@
 <h1>Listing tours</h1>
 
+Categories:
+<ul>
+  <% Category.all.each do |category| %>
+  <li>
+    <%= link_to category.name, category_tours_path(category) %>
+  </li> 
+  <% end %>
+</ul>
+
 <table>
   <tr>
     <th>Title</th>
