@@ -27,6 +27,10 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
+  <div class="field">
+    <%= f.label :categories %>
+    <%= f.collection_select :category_ids, Category.all, :id, :name, { selected: @tour.category_ids}, { multiple: true } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
