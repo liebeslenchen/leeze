@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
-gem 'sqlite3'
 gem 'jquery-rails'
 
 group :development, :test do
@@ -9,6 +8,10 @@ group :development, :test do
 	gem 'factory_girl_rails'
 	gem 'guard-rspec'
 	gem 'faker'
+end
+
+group :production do
+	gem 'pg'
 end
 
 
